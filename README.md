@@ -1,26 +1,46 @@
-# LoopingBR Publisher — Site informativo
+# LoopingBR Publisher — Site público
 
-Site estático destinado ao GitHub Pages, com apresentação do projeto e páginas de privacidade/termos. Este repositório deve ser **público e separado** de `kfeernandesk/Loopingbr_publisher`, que permanece privado.
+Página institucional e documentação do **LoopingBR Publisher**, um aplicativo desktop de publicação de vídeos e Shorts no YouTube. Este repositório é o site estático publicado no GitHub Pages, **não** o repositório operacional que processa publicações.
 
-## Publicação
+**Site:** https://kfeernandesk.github.io/
 
-1. Crie o repositório público `kfeernandesk.github.io` na conta GitHub `kfeernandesk`, inicializando-o com um README.
-2. Envie os arquivos `index.html`, `privacidade.html`, `termos.html` e `estilos.css` para a raiz da branch `main`.
-3. Em **Settings → Pages**, escolha **Deploy from a branch**, branch `main`, pasta `/(root)` e salve.
-4. Confira quando estiver disponível `https://kfeernandesk.github.io/`, assim como `/privacidade.html` e `/termos.html`.
-5. Antes de informar o endereço ao Google Cloud, revise o texto da política para confirmar que corresponde ao funcionamento real do Publisher e escolha um canal apropriado para contato privado.
-6. Para a verificação de propriedade no Google Search Console, acrescente a tag HTML fornecida pelo Google no `<head>` da página inicial (ou use arquivo de verificação HTML fornecido pelo Google). Esta etapa precisa acontecer no Google Search Console; o site por si só não verifica a propriedade.
+## Páginas e endereços estáveis
 
-## Endereços previstos
+| Página | Arquivo | Endereço |
+| --- | --- | --- |
+| Início e recursos | `index.html` | https://kfeernandesk.github.io/ |
+| Documentação técnica | `documentacao.html` | https://kfeernandesk.github.io/documentacao.html |
+| Política de Privacidade | `privacidade.html` | https://kfeernandesk.github.io/privacidade.html |
+| Termos de Uso | `termos.html` | https://kfeernandesk.github.io/termos.html |
 
-- Inicial: https://kfeernandesk.github.io/
-- Privacidade: https://kfeernandesk.github.io/privacidade.html
-- Termos: https://kfeernandesk.github.io/termos.html
+O site usa `estilos.css` e `site.js` (interações de navegação e animações de entrada; **sem rastreamento embutido**).
 
-## Observações importantes
+## Código do aplicativo
 
-- Não coloque credenciais OAuth, Secrets, refresh tokens, IDs confidenciais ou arquivos do repositório privado neste site.
-- Este site **não** recebe tokens, **não** substitui o redirect URI do OAuth Playground e **não** migra automaticamente a aplicação para o status "Em produção".
-- O Google Cloud pode exigir verificação de domínio, da identidade do aplicativo e/ou de escopos, mesmo com a página publicada.
-- O Google pode exigir verificação de domínio próprio ou outra comprovação; a URL `github.io` não representa garantia de aprovação.
-- Um token anteriormente emitido no modo de teste pode precisar de uma nova autorização após a mudança do status do aplicativo.
+- **Portfólio e código-fonte:** https://github.com/kfeernandesk/loopingbr-publisher-portfolio
+- **Release Windows v1.0.14.1:** https://github.com/kfeernandesk/loopingbr-publisher-portfolio/releases/tag/v1.0.14.1
+- **Guia completo:** https://github.com/kfeernandesk/loopingbr-publisher-portfolio/blob/main/docs/INSTALACAO.md
+
+## Relação com o Google Cloud / OAuth
+
+Esta página pode ser informada como **página inicial pública** na configuração do aplicativo no Google Cloud, juntamente com os endereços próprios de privacidade e termos.
+
+- Este site **não** recebe tokens, **não** realiza login Google e **não** substitui o endereço de callback OAuth.
+- A versão híbrida documenta o redirect local `http://127.0.0.1:8765/oauth/google/callback` no guia de instalação, sob configuração apropriada do próprio usuário.
+- Mantenha **exatamente as URLs** cadastradas no Google Cloud, bem como eventuais tags/arquivos de verificação de propriedade.
+- A publicação desta página **não altera automaticamente** o status do app para produção nem substitui etapas de verificação e autorização que o Google possa exigir.
+- Mudanças materiais na identidade do aplicativo, escopos ou conteúdo das políticas podem demandar revisão de conformidade. Confira se os textos refletem o software real.
+
+## Desenvolvimento e atualização
+
+O projeto utiliza HTML, CSS e JavaScript estáticos. Para publicar: **Settings → Pages → Deploy from a branch → main → /(root)**. O GitHub Pages disponibiliza o conteúdo da branch após o processamento do deploy.
+
+Em uma atualização visual, preserve os caminhos `index.html`, `privacidade.html` e `termos.html`. Antes de editar, tenha um backup da branch atual.
+
+A branch `backup/site-antes-redesign-2026-11-16` preserva o estado anterior à reformulação de novembro de 2026.
+
+## Avisos
+
+Sem credenciais OAuth, segredos, refresh tokens ou dados de publicações reais neste repositório. O site é independente e não tem afiliação com Google, YouTube ou GitHub.
+
+© 2026 LoopingBR Publisher.
